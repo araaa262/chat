@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat Linda</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">MyChat</div>
+    <div class="auth">
+      <button id="showRegister">Register</button>
+      <button id="showLogin">Login</button>
+      <button id="logout" style="display:none">Logout</button>
+    </div>
+  </header>
+  <div class="container">
+    <aside class="sidebar card">
+      <div id="profileBlock">
+        <img id="avatar" src="" alt="avatar" class="avatar">
+        <div id="username">Guest</div>
+      </div>
+      <div style="margin-top:12px">
+        <input type="file" id="profileFile">
+        <button id="uploadProfile">Upload Avatar</button>
+      </div>
+      <hr>
+      <div>
+        <h4>Status</h4>
+        <input type="file" id="statusFile">
+        <button id="uploadStatus">Upload Status</button>
+        <div id="statuses" class="status-list"></div>
+      </div>
+    </aside>
+    <main class="chat card">
+      <div id="messages" class="messages"></div>
+      <div class="composer">
+        <input id="text" type="text" placeholder="Tulis pesan...">
+        <button id="send">Kirim</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal" class="modal" style="display:none">
+    <div class="modal-content">
+      <h3 id="modalTitle">Login</h3>
+      <input id="mUsername" placeholder="username">
+      <input id="mPassword" type="password" placeholder="password">
+      <button id="modalSubmit">Submit</button>
+      <button id="modalClose">Close</button>
+    </div>
+  </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
